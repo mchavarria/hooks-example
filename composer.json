@@ -1,0 +1,17 @@
+{
+    "name": "miguelangelchavarria/ghook-test",
+    "description": "Git hooks tests",
+    "type": "project",
+    "require": {
+        "php": ">=7.4"
+    },
+    "authors": [
+        {
+            "name": "Miguel Angel Chavarria",
+            "email": "migue.chavarria@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "captainhook/captainhook": "^5.10"
+    }
+}
