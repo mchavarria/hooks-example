@@ -11,15 +11,8 @@ use CaptainHook\App\Hook\Action as HookAction;
 use SebastianFeldmann\Git\CommitMessage;
 use SebastianFeldmann\Git\Repository as Repo;
 
-/**
- * Class PrepareCommitMessage
- *
- * Prepare git message based on the specs
- * @see https://dev-docu.int.power.cloud/guidelines/git/
- */
 class PrepareCommitMessage implements HookAction
 {
-    private const DOC_URL = 'https://dev-docu.int.power.cloud/guidelines/git/';
 
     private const MSG_FORMAT = '[%s@%s] %s';
     private const BRANCH_MATCH_FORMAT = '/.%s@%s_.*/';
@@ -55,9 +48,7 @@ class PrepareCommitMessage implements HookAction
 
         preg_match($regex, $branch, $matches);
         if (isset($matches[1]) === false) {
-            throw new ActionFailed(
-                sprintf('Not possible to parse ticket ID from branch. See %s', self::DOC_URL)
-            );
+            throw new ActionFailed('Not possible to parse ticket ID from branch.');
         }
 
         return $matches[1];
@@ -76,9 +67,7 @@ class PrepareCommitMessage implements HookAction
 
         preg_match($regex, $branch, $matches);
         if (isset($matches[1]) === false) {
-            throw new ActionFailed(
-                sprintf('Not possible to parse project ID from branch. See %s', self::DOC_URL)
-            );
+            throw new ActionFailed('Not possible to parse project ID from branch.');
         }
 
         return $matches[1];

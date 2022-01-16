@@ -3,6 +3,10 @@
         "enabled": false,
         "actions": [
             {
+                "action": "\\Mch\\App\\GitHooks\\ValidateBranchName",
+                "options": []
+            },
+            {
                 "action": "\\Mch\\App\\GitHooks\\PrepareCommitMessage",
                 "options": []
             }
@@ -46,7 +50,12 @@
     },
     "post-checkout": {
         "enabled": false,
-        "actions": []
+        "actions": [
+            {
+                "action": "\\Mch\\App\\GitHooks\\ValidateBranchName",
+                "options": []
+            }
+        ]
     },
     "post-rewrite": {
         "enabled": false,
