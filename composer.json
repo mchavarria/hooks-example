@@ -1,7 +1,7 @@
 {
     "name": "miguelangelchavarria/ghook-test",
     "description": "Git hooks tests",
-    "type": "package",
+    "type": "library",
     "authors": [
         {
             "name": "Miguel Angel Chavarria",
