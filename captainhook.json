@@ -1,0 +1,59 @@
+{
+    "prepare-commit-msg": {
+        "enabled": false,
+        "actions": [
+            {
+                "action": "\\Mch\\App\\GitHooks\\PrepareCommitMessage",
+                "options": []
+            }
+        ]
+    },
+    "commit-msg": {
+        "enabled": false,
+        "actions": [
+            {
+                "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Beams",
+                "options": {
+                    "subjectLength": 50,
+                    "bodyLineLength": 72
+                },
+                "conditions": []
+            },
+            {
+
+                "action": "\\CaptainHook\\App\\Hook\\Message\\Action\\Regex",
+                "options": {
+                    "regex": "/^\\[[A-Z]{3,}-[0-9]{1,}@[A-Z]{2,}\\]\\s\\w+/"
+                }
+            }
+        ]
+    },
+    "pre-push": {
+        "enabled": false,
+        "actions": []
+    },
+    "pre-commit": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-commit": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-merge": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-checkout": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-rewrite": {
+        "enabled": false,
+        "actions": []
+    },
+    "post-change": {
+        "enabled": false,
+        "actions": []
+    }
+}
